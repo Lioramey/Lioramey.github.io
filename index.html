@@ -1,67 +1,457 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>A little Intro</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f7f7fc;
-            color: #25253a;
-            text-align: center;
-        }
-        header {
-            background: #635bcb;
-            color: white;
-            padding: 75px 20px;
-        }
-        h1 { font-size: 42px; }
-        section {
-            background: white;
-            margin: 25px auto;
-            padding: 30px;
-            max-width: 650px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px #00000010;
-        }
-        a { color: #635bcb; }
-        footer { padding: 25px; color: #666; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liora Meyer | Personal Website</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      background: #c89b6d;
+      background: linear-gradient(180deg, #c69263 0%, #d8ad82 38%, #e5c4a3 100%);
+      color: #3f2a1f;
+      line-height: 1.7;
+    }
+
+    .page-wrap {
+      min-height: 100vh;
+      padding: 28px 18px 60px;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      padding: 12px 18px;
+      background: rgba(255, 248, 240, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 25px rgba(74, 45, 23, 0.10);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #553728;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .hero {
+      background: rgba(255, 249, 243, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.30);
+      border-radius: 32px;
+      padding: 70px 28px;
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(79, 48, 24, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(8px);
+      opacity: 0.35;
+      z-index: 0;
+    }
+
+    .hero::before {
+      width: 220px;
+      height: 220px;
+      background: #f4d3be;
+      top: -60px;
+      left: -40px;
+    }
+
+    .hero::after {
+      width: 200px;
+      height: 200px;
+      background: #efd8a8;
+      bottom: -70px;
+      right: -30px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #8a5c3d;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    h1, h2 {
+      font-family: 'Cormorant Garamond', serif;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 5rem);
+      line-height: 0.95;
+      color: #4c2f21;
+      margin-bottom: 14px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: #744b34;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      margin: 18px auto 0;
+      color: #684633;
+      font-size: 1rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .card {
+      background: rgba(255, 250, 245, 0.84);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 28px;
+      padding: 34px 28px;
+      box-shadow: 0 18px 38px rgba(79, 48, 24, 0.10);
+    }
+
+    .card h2 {
+      font-size: 2.2rem;
+      color: #4a2e21;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: #634536;
+    }
+
+    .intro-note {
+      color: #8b5b3d;
+      font-style: italic;
+      margin-top: 6px;
+    }
+
+    .bubbles-section {
+      text-align: center;
+    }
+
+    .bubbles-intro {
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+
+    .bubble-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 26px;
+    }
+
+    .interest-card {
+      background: rgba(255, 252, 248, 0.75);
+      border-radius: 28px;
+      padding: 22px 18px 26px;
+      box-shadow: 0 14px 30px rgba(89, 52, 28, 0.10);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .interest-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(89, 52, 28, 0.16);
+    }
+
+    .bubble-art {
+      width: 128px;
+      height: 128px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 18px rgba(255,255,255,0.35),
+                  0 8px 18px rgba(94, 56, 31, 0.12);
+    }
+
+    /* Watercolor style backgrounds */
+    .bubble-art::before,
+    .bubble-art::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.82;
+      filter: blur(2px);
+    }
+
+    .poetry-art {
+      background:
+        radial-gradient(circle at 30% 35%, rgba(255,255,255,0.65) 0 18%, transparent 19%),
+        radial-gradient(circle at 50% 50%, #f2c9cf 0 35%, transparent 36%),
+        radial-gradient(circle at 70% 40%, #eab4c0 0 34%, transparent 35%),
+        radial-gradient(circle at 38% 72%, #f5d8de 0 32%, transparent 33%),
+        radial-gradient(circle at 60% 65%, #e9b8c8 0 36%, transparent 37%),
+        #f7e6ea;
+    }
+
+    .poetry-art::before {
+      width: 72px;
+      height: 72px;
+      background: rgba(231, 170, 188, 0.65);
+      top: 14px;
+      left: 18px;
+    }
+
+    .poetry-art::after {
+      width: 64px;
+      height: 64px;
+      background: rgba(249, 216, 224, 0.85);
+      bottom: 16px;
+      right: 14px;
+    }
+
+    .nature-art {
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.68) 0 16%, transparent 17%),
+        radial-gradient(circle at 48% 54%, #b9d8b3 0 35%, transparent 36%),
+        radial-gradient(circle at 72% 38%, #a7cfa1 0 32%, transparent 33%),
+        radial-gradient(circle at 30% 72%, #d0e8cb 0 30%, transparent 31%),
+        radial-gradient(circle at 65% 68%, #98bf92 0 34%, transparent 35%),
+        #e8f1e1;
+    }
+
+    .nature-art::before {
+      width: 70px;
+      height: 70px;
+      background: rgba(149, 192, 139, 0.56);
+      top: 18px;
+      right: 14px;
+    }
+
+    .nature-art::after {
+      width: 62px;
+      height: 62px;
+      background: rgba(212, 235, 203, 0.86);
+      bottom: 18px;
+      left: 16px;
+    }
+
+    .theatre-art {
+      background:
+        radial-gradient(circle at 32% 32%, rgba(255,255,255,0.66) 0 18%, transparent 19%),
+        radial-gradient(circle at 48% 52%, #e9c4aa 0 35%, transparent 36%),
+        radial-gradient(circle at 70% 38%, #dca882 0 33%, transparent 34%),
+        radial-gradient(circle at 34% 74%, #f1d6c5 0 32%, transparent 33%),
+        radial-gradient(circle at 63% 68%, #cf9b73 0 35%, transparent 36%),
+        #f5e6da;
+    }
+
+    .theatre-art::before {
+      width: 76px;
+      height: 76px;
+      background: rgba(205, 152, 111, 0.55);
+      top: 12px;
+      left: 16px;
+    }
+
+    .theatre-art::after {
+      width: 60px;
+      height: 60px;
+      background: rgba(241, 213, 191, 0.88);
+      bottom: 18px;
+      right: 16px;
+    }
+
+    .interest-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: #4d3021;
+      margin-bottom: 8px;
+    }
+
+    .interest-text {
+      font-size: 0.96rem;
+      color: #6e4d3a;
+      margin: 0;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: #7d5238;
+      color: #fffaf5;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #68422b;
+    }
+
+    footer {
+      text-align: center;
+      color: #5d3d2d;
+      margin-top: 28px;
+      font-size: 0.95rem;
+      padding: 8px 12px;
+    }
+
+    @media (max-width: 850px) {
+      .bubble-grid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero {
+        padding: 54px 22px;
+      }
+
+      .card {
+        padding: 28px 22px;
+      }
+
+      nav {
+        gap: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .interest-card,
+      .button {
+        transition: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Hello, I'm Liora!</h1>
-        <p>Ceci n'est pas un site web</p>
-    </header>
+  <div class="page-wrap">
+    <div class="container">
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-            I'm a first-year MSc student, excited to meet all of you!
-        </p>
-    </section>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <section>
-        <h2>Interests</h2>
-        <p>"Poetry", "Nature","Theatre"</p>
-        interests_html = "".join(
-    f'<span class="interest-bubble">{escape(item)}</span>'
-    for item in interests)
-    </section>
+      <header class="hero">
+        <div class="hero-content">
+          <div class="eyebrow">Welcome to my little corner of the internet</div>
+          <h1>Hi, I’m Liora</h1>
+          <div class="hero-subtitle">First-year MSc student</div>
+          <p class="hero-text">
+            Ceci n'est pas un site web
+          </p>
+        </div>
+      </header>
 
-    <section>
-        <h2>Contact Me</h2>
-        <p>
-            Find me on
-            <a href="https://github.com/YOUR_USERNAME">
-                GitHub
-            </a>
-        </p>
-    </section>
+      <main class="content-grid">
+        <section class="card" id="about">
+          <h2>About Me</h2>
+          <p>
+            Hi everyone! I’m a first-year MSc student, and I’m really excited to meet you all.
+          </p>
+          <p class="intro-note">
+            Looking forward to getting to know everyone.
+          </p>
+        </section>
 
-    <footer>Made by Liora Meyer</footer>
+        <section class="card bubbles-section" id="interests">
+          <h2>My Interests</h2>
+          <p class="bubbles-intro">
+            My Hobbies
+          </p>
+
+          <div class="bubble-grid">
+            <div class="interest-card">
+              <div class="bubble-art poetry-art"></div>
+              <div class="interest-name">Poetry</div>
+              <p class="interest-text">
+                Poetry
+              </p>
+            </div>
+
+            <div class="interest-card">
+              <div class="bubble-art nature-art"></div>
+              <div class="interest-name">Nature</div>
+              <p class="interest-text">
+                Nature
+              </p>
+            </div>
+
+            <div class="interest-card">
+              <div class="bubble-art theatre-art"></div>
+              <div class="interest-name">Theatre</div>
+              <p class="interest-text">
+                Theatre
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="contact">
+          <h2>Contact</h2>
+          <p>
+            Thank you for visiting my website.
+            If you’d like, you can also view my GitHub profile here.
+          </p>
+          <a class="button" href="https://github.com/LIORAMEYER" target="_blank">
+            Visit My GitHub
+          </a>
+        </section>
+      </main>
+
+    </div>
+  </div>
 </body>
 </html>
