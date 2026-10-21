@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Personal Website</title>
+    <title>A little Intro</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,30 +30,51 @@
         a { color: #635bcb; }
         footer { padding: 25px; color: #666; }
     </style>
+.interests-container {{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+}}
+
+.interest-bubble {{
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f7e8ff, #e8f0ff);
+    color: #4a3f63;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}}
+
+.interest-bubble:hover {{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}}
 </head>
 <body>
     <header>
         <h1>Hello, I'm Liora!</h1>
-        <p>Student | Python Learner | Curious Thinker</p>
+        <p>Ceci n'est pas un site web</p>
     </header>
 
     <section>
         <h2>About Me</h2>
         <p>
-            Hi! I'm Your Name. I'm passionate about
-            learning new things, technology, and
-            developing my skills.
+            I'm a first-year MSc student, excited to meet all of you!
         </p>
     </section>
 
     <section>
-        <h2>My Skills</h2>
-        <p>Python | Problem Solving | Research</p>
-    </section>
-
-    <section>
-        <h2>My Projects</h2>
-        <p>My first project is this personal website!</p>
+        <h2>Interests</h2>
+        <p>"Poetry", "Nature","Theatre"</p>
+        interests_html = "".join(
+    f'<span class="interest-bubble">{escape(item)}</span>'
+    for item in interests)
     </section>
 
     <section>
@@ -66,6 +87,6 @@
         </p>
     </section>
 
-    <footer>Made by Your Name</footer>
+    <footer>Made by Liora Meyer</footer>
 </body>
 </html>
