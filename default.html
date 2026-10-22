@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | escape }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <header class="hero">
+        <div class="hero-content">
+          <div class="eyebrow">{{ page.eyebrow | escape }}</div>
+          <h1>{{ page.headline | escape }}</h1>
+          <div class="hero-subtitle">{{ page.subtitle | escape }}</div>
+        </div>
+      </header>
+      <main class="content-grid">
+        <section class="card about" id="about">
+          <h2>{{ page.about_heading | escape }}</h2>
+          {{ content }}
+        </section>
+        <section class="card bubbles-section" id="interests">
+          <h2>{{ page.interests_heading | escape }}</h2>
+          <div class="bubble-grid">
+            {% for interest in page.interests %}
+            <div class="interest-card">
+              <div class="bubble-art {{ interest.style | escape }}-art" aria-hidden="true"></div>
+              <div class="interest-name">{{ interest.name | escape }}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+        <section class="card" id="contact">
+          <h2>{{ page.contact_heading | escape }}</h2>
+          <p>{{ page.contact_message | escape }}</p>
+          <a class="button" href="{{ page.github_url | escape }}" target="_blank" rel="noopener noreferrer">Visit My GitHub</a>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
