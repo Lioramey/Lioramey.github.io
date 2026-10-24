@@ -1,0 +1,282 @@
+
+/* GENERAL WEBSITE STYLE */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  color: #4d3325;
+  background: linear-gradient(
+    160deg,
+    #bf9067,
+    #d5ab84,
+    #e8cdb3
+  );
+  min-height: 100vh;
+  line-height: 1.8;
+}
+
+.page-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 18px;
+  background: #fff8efb8;
+  border-radius: 50px;
+  margin-bottom: 30px;
+}
+
+nav a {
+  color: #65442f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #ad744e;
+}
+
+/* MAIN CONTENT */
+
+.website-content {
+  background: rgba(255, 249, 241, 0.82);
+  border-radius: 35px;
+  padding: 55px 45px;
+  box-shadow: 0 20px 50px rgba(80, 45, 22, 0.12);
+  text-align: center;
+}
+
+/* TYPOGRAPHY */
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+h1 {
+  font-size: clamp(3.2rem, 8vw, 5.5rem);
+  color: #583927;
+  margin: 0;
+  line-height: 1.1;
+}
+
+h1 + p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  color: #926949;
+  margin-top: 12px;
+}
+
+h2 {
+  font-size: 2.8rem;
+  color: #65412d;
+  margin-top: 55px;
+  margin-bottom: 20px;
+}
+
+p {
+  max-width: 680px;
+  margin: 15px auto;
+  font-size: 1rem;
+}
+
+/* ABOUT ME */
+
+#about-me + p {
+  background: #fffdf7;
+  padding: 35px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(90, 60, 35, 0.07);
+}
+
+/* INTEREST BUBBLES */
+
+#my-interests + ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+#my-interests + ul li {
+  min-width: 0;
+  background: #fffaf2;
+  padding: 25px 15px;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(85, 50, 25, 0.10);
+  transition: transform 0.3s ease;
+}
+
+#my-interests + ul li:hover {
+  transform: translateY(-8px);
+}
+
+/* WATERCOLOR CIRCLES */
+
+#my-interests + ul li::before {
+  content: "";
+  display: block;
+  width: 140px;
+  height: 140px;
+  max-width: 100%;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 25px rgba(255,255,255,0.5),
+    0 8px 20px rgba(80,50,35,0.1);
+}
+
+/* POETRY - ROSE WATERCOLOR */
+
+#my-interests + ul li:nth-child(1)::before {
+  background:
+    radial-gradient(
+      circle at 30% 35%,
+      #f9e1e6 0%, transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      #d99aaa 0%, transparent 60%
+    ),
+    radial-gradient(
+      circle at 65% 25%,
+      #edc1cc 0%, transparent 55%
+    ),
+    #f5d7df;
+}
+
+/* NATURE - SAGE GREEN WATERCOLOR */
+
+#my-interests + ul li:nth-child(2)::before {
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      #deebd3 0%, transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      #93b78d 0%, transparent 60%
+    ),
+    radial-gradient(
+      circle at 65% 25%,
+      #bad4a9 0%, transparent 55%
+    ),
+    #d8e7cd;
+}
+
+/* THEATRE - TERRACOTTA WATERCOLOR */
+
+#my-interests + ul li:nth-child(3)::before {
+  background:
+    radial-gradient(
+      circle at 30% 35%,
+      #f6e0ce 0%, transparent 55%
+    ),
+    radial-gradient(
+      circle at 70% 65%,
+      #c88e70 0%, transparent 60%
+    ),
+    radial-gradient(
+      circle at 65% 25%,
+      #e8bc9f 0%, transparent 55%
+    ),
+    #efd2ba;
+}
+
+/* INTEREST TEXT */
+
+#my-interests + ul li strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: #5c3d2d;
+  margin-bottom: 10px;
+}
+
+#my-interests + ul li p {
+  font-size: 0.9rem;
+  color: #785846;
+  margin: 0;
+}
+
+/* CONTACT */
+
+#contact + p {
+  margin-top: 15px;
+}
+
+a {
+  color: #925d3b;
+}
+
+.website-content a:hover {
+  color: #ba8056;
+}
+
+/* LAST MESSAGE */
+
+.website-content > p:last-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem;
+  margin-top: 45px;
+  color: #876044;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 35px;
+  color: #5d3e2e;
+  font-size: 0.85rem;
+}
+
+/* MOBILE PHONES */
+
+@media (max-width: 700px) {
+  .website-content {
+    padding: 35px 18px;
+  }
+
+  #my-interests + ul {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h2 {
+    font-size: 2.3rem;
+  }
+
+  nav {
+    gap: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  #my-interests + ul li {
+    transition: none;
+  }
+}
