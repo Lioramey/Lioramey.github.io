@@ -1,20 +1,20 @@
----
-layout: default
 # Liora Meyer | Personal Website
 ### Ceci n'est pas un site web
-headline: "Hi, I’m Liora"
-subtitle: "First-year MSc student"
-about_heading: "About Me"
+## About Me
+Hi everyone! I'm Liora. I’m a first-year MSc student in Yoav Livneh's Lab. I'm fascinated by emotional regulation in the brain and how conscious and subconscious processes interact.
+
 ## My Interests
-interests:
-* Poetry
-* Nature
-* Theatre
+  ### *Poetry*
+I love reading and writing poetry.
+  ### *Nature*
+I love outdoor sports, connecting to nature, going on walks in the parc.
+  ### *Theatre*
+I love doing Improv, enjoying spontaneous creativity.
+
 ## Contact
 Would love to get in touch!
 github_url: "https://github.com/lioramey"
----
 
-Hi everyone! I’m a first-year MSc student in Yoav Livneh's Lab. I'm fascinated by emotional regulation in the brain and how conscious and subconscious processes interact.
+
 
 *Looking forward to getting to know everyone!*
