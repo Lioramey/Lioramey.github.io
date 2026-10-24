@@ -1,4 +1,8 @@
 
+---
+layout: default
+title: Liora Meyer | Personal Website
+---
 
 # Liora Meyer
 
