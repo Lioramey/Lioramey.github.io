@@ -1,20 +1,17 @@
 ---
 layout: default
-title: Liora Meyer | Personal Website
-eyebrow: "Ceci n'est pas un site web"
+# Liora Meyer | Personal Website
+### Ceci n'est pas un site web
 headline: "Hi, I’m Liora"
 subtitle: "First-year MSc student"
 about_heading: "About Me"
-interests_heading: "My Interests"
+## My Interests
 interests:
-  - name: Poetry
-    style: poetry
-  - name: Nature
-    style: nature
-  - name: Theatre
-    style: theatre
-contact_heading: "Contact"
-contact_message: "Would love to get in touch!"
+* Poetry
+* Nature
+* Theatre
+## Contact
+Would love to get in touch!
 github_url: "https://github.com/lioramey"
 ---
 
