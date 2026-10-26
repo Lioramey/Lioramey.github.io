@@ -11,6 +11,10 @@ title: Liora Meyer | Personal Website
 
 Hi everyone! I'm Liora. I'm a first-year MSc student in Yoav Livneh's Lab. I'm fascinated by emotional regulation in the brain and how conscious and subconscious processes interact.
 
+## Education
+
+King's College London - I did my Bachelor's degree in Neuroscience in London. I worked on iPSC-derived neurons to understand alterations in connectivity in Frontotemporal Lobar Degeneration (FTLD) associated with Fused in Sarcoma (FUS) pathology.
+
 ## My Interests
 
 - **Poetry**
